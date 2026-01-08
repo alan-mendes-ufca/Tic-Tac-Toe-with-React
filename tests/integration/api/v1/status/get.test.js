@@ -1,0 +1,26 @@
+import orchestrator from "tests/orchestrator.js";
+
+beforeAll(async () => {
+  await orchestrator.waitForAllServices();
+});
+
+// Todos os testes que fazem get.
+test("GET to /api/v1/status should return 200", async () => {
+  const response = await fetch("http://localhost:3000/api/v1/status");
+  expect(response.status).toBe(200);
+
+  const responseBody = await response.json();
+
+  // updateAt tests
+  const parsedUpdatedAt = new Date(responseBody.updated_at).toISOString();
+  expect(responseBody.updated_at).toEqual(parsedUpdatedAt);
+
+  // database version test
+  expect(responseBody.dependencies.database.version).toEqual("16.0");
+
+  // database max connections test
+  expect(responseBody.dependencies.database.max_connections).toEqual(100);
+
+  // database apened connections test
+  expect(responseBody.dependencies.database.aponed_connections).toEqual(1);
+});
