@@ -11,7 +11,7 @@ export default function Game() {
   const [winner, setWinner] = useState(null);
 
   const [history, setHistory] = useState([]);
-  const [turn, setTurn] = useState(1);
+  const [turn, setTurn] = useState(0);
   const [isInRewardState, setIsInRewardState] = useState(false);
 
   function handleClick(i) {
