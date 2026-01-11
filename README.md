@@ -1,6 +1,6 @@
 # Tic Tac Toe - Next.js
 
-> Um projeto de **aprendizado de React.js** através da construção de um **Jogo da Velha (Tic Tac Toe)** seguindo a documentação oficial do [React](https://pt-br.react.dev/).
+> Um projeto de **aprendizado de React.js** através da construção de um **Jogo da Velha (Tic Tac Toe)** seguindo sua [documentação oficial](https://pt-br.react.dev/).
 
 ### 📚 Aprendizados Práticos
 
